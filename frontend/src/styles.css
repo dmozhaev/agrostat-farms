@@ -1,0 +1,34 @@
+body {
+    margin-left: 35px;
+    margin-right: 35px;
+    font-size: 20px;
+
+  }
+h1 {
+    display:inline;
+    margin-right: 50px !important;
+    color: #198754 !important;
+    font-family: "Lucida Handwriting", Arial;
+}
+h2 {
+    margin-top: 20px !important;
+}
+.spanheader {
+    margin-left: 35px;
+    color: #198754;
+}
+.navBarLevel {
+    text-decoration: none;
+    color: white !important;
+  }
+.header {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  margin-left: 15px;
+}
+.map-container {
+  width: 1000px;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+

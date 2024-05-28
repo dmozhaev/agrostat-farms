@@ -1,0 +1,44 @@
+version: '3'
+services:
+
+  farms-db:
+    build: ./db
+    container_name: farms-db
+    restart: always
+    volumes:
+      - farms-data:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+    networks:
+      - farms
+
+  farms-backend:
+    build: ./backend
+    container_name: farms-backend
+    ports:
+      - 8091:8091
+    depends_on:
+      - farms-db
+    links:
+      - farms-db
+    networks:
+      - farms
+
+  farms-frontend:
+    build: ./frontend
+    container_name: farms-frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - farms-backend
+    links:
+      - farms-backend
+    networks:
+      - farms
+
+volumes:
+  farms-data:
+
+networks:
+  farms:
+    name: farms-network  
